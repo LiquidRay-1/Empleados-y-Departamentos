@@ -5,6 +5,8 @@ import com.example.empleados.service.DepartamentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin({"*"})
 @RestController
 @RequestMapping("/api/departamento")
@@ -16,5 +18,9 @@ public class DepartamentoController {
     @PostMapping
     public Departamento save(@RequestBody Departamento departamento){
         return departamentoService.guardarDepartamento(departamento);
+    }
+
+    public List<Departamento> list(){
+        return departamentoService.listaDepartamentos();
     }
 }

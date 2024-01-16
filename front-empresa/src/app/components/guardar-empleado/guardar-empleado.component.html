@@ -1,0 +1,14 @@
+<form (subnmit)="getData()" [formGroup]="form" >
+
+    <input type="text" name="nombre" formControlName="nombre" placeholder="Nombre" autocomplete="off"><br>
+    <input type="text" name="apellidoUno" formControlName="apellidoUno" placeholder="Primer apellido" autocomplete="off"><br>
+    <input type="text" name="apellidoDos" formControlName="apellidoDos" placeholder="Segundo apellido" autocomplete="off"><br>
+
+    <select formControlName="departamento">
+        <option value="">Selecionar departamentos</option>
+        <option *ngFor="let departamento of departamentos" [value]="departamento.id">
+            {{ departamento.nombreDepartamento }}
+        </option>
+    </select>
+    <button type="submit">Guardar Empleado</button>
+</form>
